@@ -12,6 +12,5 @@ let canAttack (queen1: int * int) (queen2: int * int) =
 
     match queen1, queen2 with
     | q1,q2 when q1 = q2 -> failwith "Two queens in the same space"
-    | q1,q2 when sameRowCol q1 q2 -> true
-    | q1,q2 when diagonal q1 q2 -> true
+    | q1,q2 -> sameRowCol q1 q2 || diagonal q1 q2
     | _ -> false
